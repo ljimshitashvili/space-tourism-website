@@ -10,8 +10,8 @@ import GlobalStyle from "./GlobalStyles";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Main/Home/Home";
 import Destination from "./Components/Main/Destination/Destination";
-import Crew from "./Components/Main/Crew/Crew"
-import Technology from "./Components/Main/Technology/Technology"
+import Crew from "./Components/Main/Crew/Crew";
+import Technology from "./Components/Main/Technology/Technology";
 
 import bgHomeMob from "./assets/starter-code/assets/home/background-home-mobile.jpg";
 import bgHomeTab from "./assets/starter-code/assets/home/background-home-tablet.jpg";
@@ -48,8 +48,11 @@ function App() {
             path="/destination"
             element={<Destination setPath={setPath} />}
           ></Route>
-          <Route path="/crew" element={<Crew setPath={setPath}/>}></Route>
-          <Route path="/techonolgy" element={<Technology setPath={setPath}/>}></Route>
+          <Route path="/crew" element={<Crew setPath={setPath} />}></Route>
+          <Route
+            path="/techonolgy"
+            element={<Technology setPath={setPath} />}
+          ></Route>
         </Routes>
       </Router>
     </Container>
@@ -62,6 +65,16 @@ const Container = styled.div<ContainerTypes>`
   width: 100%;
   min-height: 100vh;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-size: 100% 100%;
-  ${(p)=> p.path === "/" ? `background-image: url(${bgHomeMob})` : p.path === "/destination" ? `background-image: url(${bgDestMob})` : p.path === "/crew" ? `background-image: url(${bgCrewMob})` : `background-image: url(${bgTechMob})`}
+  ${(p) =>
+    p.path === "/"
+      ? `background-image: url(${bgHomeMob})`
+      : p.path === "/destination"
+      ? `background-image: url(${bgDestMob})`
+      : p.path === "/crew"
+      ? `background-image: url(${bgCrewMob})`
+      : `background-image: url(${bgTechMob})`}
 `;
