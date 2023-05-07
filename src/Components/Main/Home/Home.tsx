@@ -14,14 +14,16 @@ export default function Destination({ setPath }: Props) {
   }, [location]);
   return (
     <Container>
-      <h1>SO, YOU WANT TO TRAVEL TO</h1>
-      <h2>SPACE</h2>
-      <p>
-        Let’s face it; if you want to go to space, you might as well genuinely
-        go to outer space and not hover kind of on the edge of it. Well sit
-        back, and relax because we’ll give you a truly out of this world
-        experience!
-      </p>
+      <div>
+        <h1>SO, YOU WANT TO TRAVEL TO</h1>
+        <h2>SPACE</h2>
+        <p>
+          Let’s face it; if you want to go to space, you might as well genuinely
+          go to outer space and not hover kind of on the edge of it. Well sit
+          back, and relax because we’ll give you a truly out of this world
+          experience!
+        </p>
+      </div>
       <Circle>
         <h3>EXPLORE</h3>
       </Circle>
@@ -67,6 +69,55 @@ const Container = styled.div`
     text-align: center;
     color: #d0d6f9;
   }
+
+  @media (min-width: 768px) {
+    max-width: 445px;
+    gap: 24px;
+    margin: 106px 0;
+
+    h1 {
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: 3.375px;
+    }
+
+    h2 {
+      font-size: 150px;
+      line-height: 150px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 28px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    max-width: unset;
+    justify-content: space-around;
+    width: 100%;
+    margin: 251px 0 131px 0;
+
+    div {
+      max-width: 445px;
+
+      h1 {
+        font-size: 28px;
+        line-height: 34px;
+        letter-spacing: 4.725px;
+      }
+
+      h2 {
+        line-height: 172px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 32px;
+      }
+    }
+  }
 `;
 
 const Circle = styled.div`
@@ -89,5 +140,11 @@ const Circle = styled.div`
     text-align: center;
     letter-spacing: 1.25px;
     color: #0b0d17;
+  }
+
+  @media (min-width: 768px) {
+    width: 242px;
+    height: 242px;
+    margin-top: 50px;
   }
 `;

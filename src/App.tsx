@@ -68,7 +68,9 @@ const Container = styled.div<ContainerTypes>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-size: 100% 100%;
+  background-size: cover;
+  background-position: center;
+
   ${(p) =>
     p.path === "/"
       ? `background-image: url(${bgHomeMob})`
@@ -76,5 +78,27 @@ const Container = styled.div<ContainerTypes>`
       ? `background-image: url(${bgDestMob})`
       : p.path === "/crew"
       ? `background-image: url(${bgCrewMob})`
-      : `background-image: url(${bgTechMob})`}
+      : `background-image: url(${bgTechMob})`};
+
+  @media (min-width: 768px) {
+    ${(p) =>
+      p.path === "/"
+        ? `background-image: url(${bgHomeTab})`
+        : p.path === "/destination"
+        ? `background-image: url(${bgDestTab})`
+        : p.path === "/crew"
+        ? `background-image: url(${bgCrewTab})`
+        : `background-image: url(${bgTechTab})`}
+  }
+
+  @media (min-width: 1024px) {
+    ${(p) =>
+      p.path === "/"
+        ? `background-image: url(${bgHomeDesk})`
+        : p.path === "/destination"
+        ? `background-image: url(${bgDestDesk})`
+        : p.path === "/crew"
+        ? `background-image: url(${bgCrewDesk})`
+        : `background-image: url(${bgTechDesk})`};
+  }
 `;
