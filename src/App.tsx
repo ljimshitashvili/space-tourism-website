@@ -1,3 +1,4 @@
+import Header from "./Components/Header/Header";
 import GlobalStyle from "./GlobalStyles";
 import styled from "styled-components";
 
@@ -5,6 +6,7 @@ function App() {
   return (
     <Container>
       <GlobalStyle />
+      <Header />
     </Container>
   );
 }
