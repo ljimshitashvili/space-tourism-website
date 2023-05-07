@@ -47,6 +47,7 @@ const Container = styled.div<Props>`
   background-color: brown;
   padding: 32px;
   transition: all 0.2s;
+
   img {
     position: absolute;
     top: 24px;
