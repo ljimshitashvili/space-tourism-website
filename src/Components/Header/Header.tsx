@@ -13,10 +13,19 @@ export default function Header() {
     <Container>
       <img src={Logo} alt="Website Logo" className="logo" />
       <ButtonContainer>
-        <Link to="/">HOME</Link>
-        <Link to="destination">DESTINATION</Link>
-        <Link to="crew">CREW</Link>
-        <Link to="techonolgy">TECHNOLOGIES</Link>
+        <Link to="/">
+          <span>00 </span> HOME
+        </Link>
+        <Link to="destination">
+          <span>01 </span> DESTINATION
+        </Link>
+        <Link to="crew">
+          <span>02 </span> CREW
+        </Link>
+        <Link to="techonolgy">
+          <span>03 </span> TECHNOLOGIES
+        </Link>
+        <hr />
       </ButtonContainer>
       <img
         onClick={() => {
@@ -43,11 +52,20 @@ const Container = styled.div`
     padding: 0;
 
     .logo {
-      margin: 24px 0 0 39px;
+      margin: 24px 0 0 55px;
     }
 
     .burgerIcon {
       display: none;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    gap: 50px;
+    padding: 40px 0;
+
+    .logo {
+      margin: 0 0 0 55px;
     }
   }
 `;
@@ -62,6 +80,10 @@ const ButtonContainer = styled.div`
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(40.7742px);
 
+  hr {
+    display: none;
+  }
+
   a {
     text-decoration: none;
     font-family: "Barlow Condensed";
@@ -71,9 +93,44 @@ const ButtonContainer = styled.div`
     line-height: 17px;
     letter-spacing: 2.3625px;
     color: #ffffff;
+
+    span {
+      display: none;
+    }
   }
 
   @media (min-width: 768px) {
     display: flex;
+  }
+
+  @media (min-width: 1024px) {
+    width: 100%;
+    max-width: 57%;
+    position: relative;
+
+    hr {
+      display: block;
+      width: 473px;
+      height: 1px;
+      background-color: white;
+      opacity: 0.25;
+      position: absolute;
+      left: -443px;
+      top: 50%;
+      border: none;
+    }
+
+    a {
+      display: flex;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 2.7px;
+      gap: 11px;
+      span {
+        font-weight: 700;
+        display: block;
+      }
+    }
   }
 `;
