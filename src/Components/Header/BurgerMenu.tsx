@@ -10,7 +10,7 @@ interface Props {
 
 export default function BurgerMenu({ active, setactive }: Props) {
   return (
-    <Container active={active}>
+    <Container active={active} setactive={setactive}>
       <img
         onClick={() => {
           setactive(!active);

@@ -159,22 +159,17 @@ const ButtonContainer = styled.div<ButtonTypes>`
   }
 
   .vehicle {
-    ${(p) =>
-      p.techpath.includes("vehicle")
-        ? `background-color: white; color: black`
-        : ``}
+    ${(p) => (p.techpath.includes("vehicle") ? `background-color: white` : ``)};
+    ${(p) => (p.techpath.includes("vehicle") ? `color: black` : ``)}
   }
   .spaceport {
     ${(p) =>
-      p.techpath.includes("spaceport")
-        ? `background-color: white; color: black`
-        : ``}
+      p.techpath.includes("spaceport") ? `background-color: white` : ``};
+    ${(p) => (p.techpath.includes("spaceport") ? `color: black` : ``)}
   }
   .capsule {
-    ${(p) =>
-      p.techpath.includes("capsule")
-        ? `background-color: white; color: black`
-        : ``}
+    ${(p) => (p.techpath.includes("capsule") ? `background-color: white` : ``)};
+    ${(p) => (p.techpath.includes("capsule") ? `color: black` : ``)}
   }
   @media (min-width: 768px) {
     width: 212px;

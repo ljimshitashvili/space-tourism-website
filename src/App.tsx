@@ -31,7 +31,7 @@ function App() {
   const [path, setpath] = useState<string>("");
 
   return (
-    <Container path={path}>
+    <Container path={path} setpath={setpath}>
       <Router>
         <GlobalStyle />
         <Header path={path} />
