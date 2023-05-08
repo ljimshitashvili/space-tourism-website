@@ -22,6 +22,9 @@ export default function Destination({ setPath }: Props) {
   }, [location]);
   return (
     <Container>
+      <h1>
+        <span>02</span> MEET YOUR CREW
+      </h1>
       <Routes>
         <Route
           path="douglas-hurley"
@@ -66,6 +69,28 @@ const Container = styled.div`
   max-width: 327px;
   align-items: center;
 
+  h1 {
+    font-family: "Barlow Condensed";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 2.7px;
+    color: #ffffff;
+
+    span {
+      font-family: "Barlow Condensed";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 2.7px;
+      color: #ffffff;
+      mix-blend-mode: normal;
+      opacity: 0.25;
+    }
+  }
+
   @media (min-width: 768px) {
     max-width: 573px;
   }
@@ -76,13 +101,12 @@ const Container = styled.div`
 `;
 
 const ButtonContainer = styled.div`
-  width: 238px;
-  height: 28px;
+  width: 88px;
   display: flex;
   justify-content: space-between;
   align-items: start;
   position: absolute;
-  top: 270px;
+  top: 310px;
 
   a {
     text-decoration: none;
