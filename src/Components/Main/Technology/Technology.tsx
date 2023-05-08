@@ -91,7 +91,6 @@ const Container = styled.div`
   @media (min-width: 768px) {
     max-width: 573px;
     flex: 1;
-    padding: 90px 0 0;
 
     h1 {
       top: 40px;
@@ -173,25 +172,29 @@ const ButtonContainer = styled.div<ButtonTypes>`
     ${(p) => (p.techPath.includes("capsule") ? `opacity: 1` : `opacity: 0.17`)}
   }
   @media (min-width: 768px) {
-    width: 88px;
-    top: 346px;
+    width: 212px;
+    top: 514px;
 
-    a {
-      font-size: 16px;
-      line-height: 19px;
-      letter-spacing: 2.7;
+    .circle {
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+      line-height: 28px;
+      letter-spacing: 1.5;
     }
   }
 
   @media (min-width: 1024px) {
-    top: unset;
+    flex-direction: column;
+    top: 247px;
     bottom: 100px;
-    left: 17%;
-    width: 132px;
+    left: 7%;
+
+    height: 304px;
 
     .circle {
-      width: 15px;
-      height: 15px;
+      width: 80px;
+      height: 80px;
     }
   }
 `;
