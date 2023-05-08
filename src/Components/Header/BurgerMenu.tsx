@@ -9,26 +9,24 @@ interface Props {
 }
 
 export default function BurgerMenu({ active, setactive }: Props) {
+  const closeMenu = () => {
+    setactive(!active);
+  };
+
   return (
     <Container active={active} setactive={setactive}>
-      <img
-        onClick={() => {
-          setactive(!active);
-        }}
-        src={CloseIcon}
-        alt="sda"
-      />
+      <img onClick={() => closeMenu()} src={CloseIcon} alt="sda" />
       <ButtonContainer>
         <Link to="/">
           00 <span>HOME</span>
         </Link>
-        <Link to="destination/moon">
+        <Link to="destination/moon" onClick={() => closeMenu()}>
           01 <span>DESTINATION</span>
         </Link>
-        <Link to="crew/douglas-hurley">
+        <Link to="crew/douglas-hurley" onClick={() => closeMenu()}>
           02 <span>CREW</span>
         </Link>
-        <Link to="technology/vehicle">
+        <Link to="technology/vehicle" onClick={() => closeMenu()}>
           03 <span>TECHNOLOGIES</span>
         </Link>
       </ButtonContainer>

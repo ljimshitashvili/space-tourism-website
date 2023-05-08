@@ -20,8 +20,6 @@ export default function Destination({ setpath }: Props) {
 
   const location = useLocation();
 
-  console.log(techpath);
-
   useEffect(() => {
     setpath(location.pathname);
   }, [location]);
