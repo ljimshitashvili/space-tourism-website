@@ -116,6 +116,7 @@ const Container = styled.div`
       p {
         font-size: 18px;
         line-height: 32px;
+        text-align: left;
       }
     }
   }

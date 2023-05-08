@@ -28,7 +28,7 @@ export default function BurgerMenu({ active, setActive }: Props) {
         <Link to="crew/douglas-hurley">
           02 <span>CREW</span>
         </Link>
-        <Link to="technology">
+        <Link to="technology/vehicle">
           03 <span>TECHNOLOGIES</span>
         </Link>
       </ButtonContainer>

@@ -166,10 +166,15 @@ const ButtonContainer = styled.div<ButtonTypes>`
   }
   .spaceport {
     ${(p) =>
-      p.techPath.includes("spaceport") ? `opacity: 1` : `opacity: 0.17`}
+      p.techPath.includes("spaceport")
+        ? `background-color: white; color: black`
+        : ``}
   }
   .capsule {
-    ${(p) => (p.techPath.includes("capsule") ? `opacity: 1` : `opacity: 0.17`)}
+    ${(p) =>
+      p.techPath.includes("capsule")
+        ? `background-color: white; color: black`
+        : ``}
   }
   @media (min-width: 768px) {
     width: 212px;
@@ -189,7 +194,6 @@ const ButtonContainer = styled.div<ButtonTypes>`
     top: 247px;
     bottom: 100px;
     left: 7%;
-
     height: 304px;
 
     .circle {

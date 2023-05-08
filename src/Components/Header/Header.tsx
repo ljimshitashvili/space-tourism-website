@@ -32,7 +32,7 @@ export default function Header({ path }: Props) {
         <Link to="crew/douglas-hurley">
           <span>02 </span> CREW
         </Link>
-        <Link to="technology">
+        <Link to="technology/vehicle">
           <span>03 </span> TECHNOLOGIES
         </Link>
         <hr />
