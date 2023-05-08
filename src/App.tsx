@@ -84,7 +84,7 @@ const Container = styled.div<ContainerTypes>`
         : p.path.includes("/crew")
         ? `background-image: url(${bgCrewTab})`
         : p.path.includes("/technology")
-        ? `background-image: url(${bgCrewTab})`
+        ? `background-image: url(${bgTechTab})`
         : ``}
   }
 
