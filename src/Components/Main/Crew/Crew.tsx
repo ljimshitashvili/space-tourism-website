@@ -9,22 +9,20 @@ import Victor from "./People/Victor";
 import Anousheh from "./People/Anousheh";
 
 interface Props {
-  setPath: (path: string) => void;
+  setpath: (path: string) => void;
 }
 
 interface ButtonTypes {
   crewPath: string;
 }
 
-export default function Destination({ setPath }: Props) {
+export default function Destination({ setpath }: Props) {
   const [crewPath, setCrewPath] = useState<string>("");
 
   const location = useLocation();
 
-  console.log(crewPath);
-
   useEffect(() => {
-    setPath(location.pathname);
+    setpath(location.pathname);
   }, [location]);
   return (
     <Container>

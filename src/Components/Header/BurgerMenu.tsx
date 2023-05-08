@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 
 interface Props {
   active: boolean;
-  setActive: (active: boolean) => void;
+  setactive: (active: boolean) => void;
 }
 
-export default function BurgerMenu({ active, setActive }: Props) {
+export default function BurgerMenu({ active, setactive }: Props) {
   return (
-    <Container active={active} setActive={setActive}>
+    <Container active={active}>
       <img
         onClick={() => {
-          setActive(!active);
+          setactive(!active);
         }}
         src={CloseIcon}
         alt="sda"
@@ -49,7 +49,7 @@ const Container = styled.div<Props>`
   z-index: 10;
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(81.5485px);
+  -webkit-backdrop-filter: blur(40px);
   img {
     position: absolute;
     top: 24px;

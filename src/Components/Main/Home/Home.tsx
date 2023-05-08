@@ -3,14 +3,14 @@ import { useEffect } from "react";
 import styled from "styled-components";
 
 interface Props {
-  setPath: (path: string) => void;
+  setpath: (path: string) => void;
 }
 
-export default function Destination({ setPath }: Props) {
+export default function Destination({ setpath }: Props) {
   const location = useLocation();
 
   useEffect(() => {
-    setPath(location.pathname);
+    setpath(location.pathname);
   }, [location]);
 
   return (

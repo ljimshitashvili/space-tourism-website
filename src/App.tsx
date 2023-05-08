@@ -24,27 +24,27 @@ import { useState } from "react";
 
 interface ContainerTypes {
   path: string;
-  setPath: (path: string) => void;
+  setpath: (path: string) => void;
 }
 
 function App() {
-  const [path, setPath] = useState<string>("");
+  const [path, setpath] = useState<string>("");
 
   return (
-    <Container path={path} setPath={setPath}>
+    <Container path={path}>
       <Router>
         <GlobalStyle />
         <Header path={path} />
         <Routes>
-          <Route path="/" element={<Home setPath={setPath} />}></Route>
+          <Route path="/" element={<Home setpath={setpath} />}></Route>
           <Route
             path="/destination/*"
-            element={<Destination setPath={setPath} />}
+            element={<Destination setpath={setpath} />}
           ></Route>
-          <Route path="/crew/*" element={<Crew setPath={setPath} />}></Route>
+          <Route path="/crew/*" element={<Crew setpath={setpath} />}></Route>
           <Route
             path="/technology/*"
-            element={<Technology setPath={setPath} />}
+            element={<Technology setpath={setpath} />}
           ></Route>
         </Routes>
       </Router>

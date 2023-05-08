@@ -9,7 +9,7 @@ import Europa from "./Planets/Europa";
 import Titan from "./Planets/Titan";
 
 interface Props {
-  setPath: (path: string) => void;
+  setpath: (path: string) => void;
 }
 
 interface SliderTypes {
@@ -17,12 +17,12 @@ interface SliderTypes {
   setDestPath: (destPath: string) => void;
 }
 
-export default function Destination({ setPath }: Props) {
+export default function Destination({ setpath }: Props) {
   const [destPath, setDestPath] = useState<string>("");
   const location = useLocation();
 
   useEffect(() => {
-    setPath(location.pathname);
+    setpath(location.pathname);
   }, [location]);
 
   return (

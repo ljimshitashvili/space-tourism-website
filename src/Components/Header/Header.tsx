@@ -12,7 +12,7 @@ interface Props {
 }
 
 export default function Header({ path }: Props) {
-  const [active, setActive] = useState<boolean>(false);
+  const [active, setactive] = useState<boolean>(false);
   return (
     <Container>
       <Link to="/">
@@ -39,13 +39,13 @@ export default function Header({ path }: Props) {
       </ButtonContainer>
       <img
         onClick={() => {
-          setActive(!active);
+          setactive(!active);
         }}
         src={BurgerMenuIcon}
         alt="Menu Icon"
         className="burgerIcon"
       />
-      <BurgerMenu active={active} setActive={setActive} />
+      <BurgerMenu active={active} setactive={setactive} />
     </Container>
   );
 }

@@ -6,7 +6,7 @@ import ImageLandscape from "../../../../assets/starter-code/assets/technology/im
 import ImagePortrait from "../../../../assets/starter-code/assets/technology/image-space-capsule-portrait.jpg";
 
 interface Props {
-  setTechPath: (techPath: string) => void;
+  setTechPath: (techpath: string) => void;
 }
 
 export default function Vehicle({ setTechPath }: Props) {

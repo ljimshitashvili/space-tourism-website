@@ -8,20 +8,20 @@ import SpacePort from "./Technologies/Spaceport";
 import Capsule from "./Technologies/Capsule";
 
 interface Props {
-  setPath: (path: string) => void;
+  setpath: (path: string) => void;
 }
 
 interface ButtonTypes {
-  techPath: string;
+  techpath: string;
 }
 
-export default function Destination({ setPath }: Props) {
-  const [techPath, setTechPath] = useState<string>("");
+export default function Destination({ setpath }: Props) {
+  const [techpath, setTechPath] = useState<string>("");
 
   const location = useLocation();
 
   useEffect(() => {
-    setPath(location.pathname);
+    setpath(location.pathname);
   }, [location]);
   return (
     <Container>
@@ -42,7 +42,7 @@ export default function Destination({ setPath }: Props) {
           element={<Capsule setTechPath={setTechPath} />}
         ></Route>
       </Routes>
-      <ButtonContainer techPath={techPath}>
+      <ButtonContainer techpath={techpath}>
         <Link to="vehicle">
           <div className="circle vehicle">1</div>
         </Link>
@@ -160,19 +160,19 @@ const ButtonContainer = styled.div<ButtonTypes>`
 
   .vehicle {
     ${(p) =>
-      p.techPath.includes("vehicle")
+      p.techpath.includes("vehicle")
         ? `background-color: white; color: black`
         : ``}
   }
   .spaceport {
     ${(p) =>
-      p.techPath.includes("spaceport")
+      p.techpath.includes("spaceport")
         ? `background-color: white; color: black`
         : ``}
   }
   .capsule {
     ${(p) =>
-      p.techPath.includes("capsule")
+      p.techpath.includes("capsule")
         ? `background-color: white; color: black`
         : ``}
   }
