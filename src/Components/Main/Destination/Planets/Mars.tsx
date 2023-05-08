@@ -54,6 +54,12 @@ const Container = styled.div`
   padding: 24px 0;
   position: relative;
 
+  .imageDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   h1 {
     width: 100%;
     font-family: "Barlow Condensed";
