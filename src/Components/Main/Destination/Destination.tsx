@@ -59,6 +59,10 @@ const Container = styled.div`
   position: relative;
   max-width: 327px;
   align-items: center;
+
+  @media (min-width: 768px) {
+    max-width: 573px;
+  }
 `;
 
 const ButtonContainer = styled.div`
@@ -80,6 +84,18 @@ const ButtonContainer = styled.div`
     letter-spacing: 2.3625px;
     color: #d0d6f9;
   }
+
+  @media (min-width: 768px) {
+    width: 285px;
+    height: 34px;
+    top: 480px;
+
+    a {
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 2.7;
+    }
+  }
 `;
 
 const Slider = styled.div<SliderTypes>`
@@ -91,24 +107,28 @@ const Slider = styled.div<SliderTypes>`
   transition: all 0.3s;
 
   ${(p) =>
-    p.destPath === "/destination/moon"
-      ? `transform: translateX(-2px)`
-      : p.destPath === "/destination/mars"
-      ? `transform: translateX(60px)`
-      : p.destPath === "/destination/europa"
-      ? `transform: translateX(128px)`
-      : `transform: translateX(200px)`};
+    p.destPath.includes("moon")
+      ? `transform: translateX(-20px)`
+      : p.destPath.includes("/mars")
+      ? `transform: translateX(75px)`
+      : p.destPath.includes("europa")
+      ? `transform: translateX(175px)`
+      : p.destPath.includes("titan")
+      ? `transform: translateX(275px)`
+      : ``};
 
-  @media (min-width: 1024px) {
-    width: 117px;
+  @media (min-width: 768px) {
+    width: 41px;
 
     ${(p) =>
-      p.destPath === "/destination/moon"
-        ? 0
-        : p.destPath === "/destination/mars"
-        ? `transform: translateX(115px)`
-        : p.destPath === "/destination/europa"
-        ? `transform: translateX(260px)`
-        : `transform: translateX(400px)`};
+      p.destPath.includes("moon")
+        ? `transform: translateX(-3px)`
+        : p.destPath.includes("/mars")
+        ? `transform: translateX(73px)`
+        : p.destPath.includes("europa")
+        ? `transform: translateX(155px)`
+        : p.destPath.includes("titan")
+        ? `transform: translateX(243px)`
+        : ``};
   }
 `;

@@ -156,11 +156,13 @@ const Slider = styled.div<Props>`
   ${(p) =>
     p.path === "/"
       ? `transform: translateX(-20px)`
-      : p.path === "/destination"
+      : p.path.includes("/destination")
       ? `transform: translateX(75px)`
-      : p.path === "/crew"
+      : p.path.includes("/crew")
       ? `transform: translateX(175px)`
-      : `transform: translateX(275px)`};
+      : p.path.includes("technology")
+      ? `transform: translateX(275px)`
+      : ``};
 
   @media (min-width: 1024px) {
     width: 117px;
@@ -168,10 +170,12 @@ const Slider = styled.div<Props>`
     ${(p) =>
       p.path === "/"
         ? 0
-        : p.path === "/destination"
+        : p.path.includes("/destination")
         ? `transform: translateX(115px)`
-        : p.path === "/crew"
+        : p.path.includes("/crew")
         ? `transform: translateX(260px)`
-        : `transform: translateX(400px)`};
+        : p.path.includes("technology")
+        ? `transform: translateX(400px)`
+        : ``};
   }
 `;

@@ -28,10 +28,16 @@ export default function Moon({ setDestPath }: Props) {
         sites.
       </p>
       <hr />
-      <h3>AVG. DISTANCE</h3>
-      <h4>384,400 km</h4>
-      <h5>Est. travel time</h5>
-      <h6>3 days</h6>
+      <InfoContainer>
+        <div>
+          <h3>AVG. DISTANCE</h3>
+          <h4>384,400 km</h4>
+        </div>
+        <div>
+          <h5>Est. travel time</h5>
+          <h6>3 days</h6>
+        </div>
+      </InfoContainer>
     </Container>
   );
 }
@@ -45,7 +51,12 @@ const Container = styled.div`
   padding: 24px 0;
   position: relative;
 
+  @media (min-width: 768px) {
+    padding: 40px 0 70px 0;
+  }
+
   h1 {
+    width: 100%;
     font-family: "Barlow Condensed";
     font-size: 16px;
     line-height: 19px;
@@ -56,6 +67,7 @@ const Container = styled.div`
     text-transform: uppercase;
     display: flex;
     gap: 18px;
+    text-align: center;
     align-items: center;
 
     span {
@@ -68,6 +80,19 @@ const Container = styled.div`
       color: #ffffff;
       opacity: 0.25;
     }
+
+    @media (min-width: 768px) {
+      font-size: 20px;
+      letter-spacing: 3.375px;
+      text-align: left;
+      line-height: 24px;
+
+      span {
+        font-size: 20px;
+        letter-spacing: 3.375px;
+        line-height: 24px;
+      }
+    }
   }
 
   h2 {
@@ -78,6 +103,11 @@ const Container = styled.div`
     line-height: 64px;
     text-align: center;
     color: #ffffff;
+
+    @media (min-width: 768px) {
+      font-size: 80px;
+      line-height: 92px;
+    }
   }
 
   p {
@@ -88,7 +118,43 @@ const Container = styled.div`
     line-height: 25px;
     text-align: center;
     color: #d0d6f9;
+
+    @media (min-width: 768px) {
+      font-size: 16px;
+      line-height: 28px;
+      margin-bottom: 18px;
+    }
   }
+
+  img {
+    width: 170px;
+    height: 170px;
+    margin: 32px 0 74px 0;
+
+    @media (min-width: 768px) {
+      width: 300px;
+      height: 300px;
+
+      margin: 60px 0 119px 0;
+    }
+  }
+
+  hr {
+    width: 100%;
+    border: none;
+    height: 1px;
+    background: #383b4b;
+    margin: 32px 0;
+
+    @media (min-width: 768px) {
+      margin: 49px 0;
+    }
+  }
+`;
+
+const InfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 
   h3 {
     font-family: "Barlow Condensed";
@@ -139,17 +205,13 @@ const Container = styled.div`
     color: #ffffff;
   }
 
-  img {
-    width: 170px;
-    height: 170px;
-    margin: 32px 0 74px 0;
-  }
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 100px;
+    align-items: center;
 
-  hr {
-    width: 100%;
-    border: none;
-    height: 1px;
-    background: #383b4b;
-    margin: 32px 0;
+    h4 {
+      margin-bottom: 0;
+    }
   }
 `;
