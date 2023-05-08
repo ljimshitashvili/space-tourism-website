@@ -45,10 +45,10 @@ const Container = styled.div<Props>`
   right: ${(props) => (props.active ? "0" : "-254px")};
   top: 0;
   background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(40.7742px);
   padding: 32px;
   transition: all 0.2s;
   z-index: 10;
+  backdrop-filter: blur(40.7742px);
 
   img {
     position: absolute;
