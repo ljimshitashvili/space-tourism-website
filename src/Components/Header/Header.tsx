@@ -7,15 +7,25 @@ import BurgerMenu from "./BurgerMenu";
 import Logo from "../../assets/starter-code/assets/shared/logo.svg";
 import BurgerMenuIcon from "../../assets/starter-code/assets/shared/icon-hamburger.svg";
 
-export default function Header() {
+interface Props {
+  path: string;
+}
+
+export default function Header({ path }: Props) {
   const [active, setActive] = useState<boolean>(false);
   return (
     <Container>
-      <img src={Logo} alt="Website Logo" className="logo" />
+      <Link to="/">
+        <img src={Logo} alt="Website Logo" className="logo" />
+      </Link>
       <ButtonContainer>
-        <Link to="/">
-          <span>00 </span> HOME
-        </Link>
+        <div>
+          <Link to="/">
+            <span>00 </span> HOME
+          </Link>
+          <Slider path={path} />
+        </div>
+
         <Link to="destination">
           <span>01 </span> DESTINATION
         </Link>
@@ -132,5 +142,36 @@ const ButtonContainer = styled.div`
         display: block;
       }
     }
+  }
+`;
+
+const Slider = styled.div<Props>`
+  width: 87px;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  transition: all 0.3s;
+
+  ${(p) =>
+    p.path === "/"
+      ? `transform: translateX(-20px)`
+      : p.path === "/destination"
+      ? `transform: translateX(75px)`
+      : p.path === "/crew"
+      ? `transform: translateX(175px)`
+      : `transform: translateX(275px)`};
+
+  @media (min-width: 1024px) {
+    width: 117px;
+
+    ${(p) =>
+      p.path === "/"
+        ? 0
+        : p.path === "/destination"
+        ? `transform: translateX(115px)`
+        : p.path === "/crew"
+        ? `transform: translateX(260px)`
+        : `transform: translateX(400px)`};
   }
 `;

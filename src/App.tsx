@@ -36,7 +36,7 @@ function App() {
     <Container path={path} setPath={setPath}>
       <Router>
         <GlobalStyle />
-        <Header />
+        <Header path={path} />
         <Routes>
           <Route path="/" element={<Home setPath={setPath} />}></Route>
           <Route
