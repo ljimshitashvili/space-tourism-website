@@ -16,29 +16,33 @@ export default function Europa({ setDestPath }: Props) {
 
   return (
     <Container>
-      <h1>
-        <span>01</span>Pick your destination
-      </h1>
-      <img src={EuropaIcon} alt="Europa" />
-      <h2>EUROPA</h2>
-      <p>
-        The smallest of the four Galilean moons orbiting Jupiter, Europa is a
-        winter lover’s dream. With an icy surface, it’s perfect for a bit of ice
-        skating, curling, hockey, or simple relaxation in your snug wintery
-        cabin.
-      </p>
-      <hr />
+      <div className="imageDiv">
+        <h1>
+          <span>01</span>Pick your destination
+        </h1>
+        <img src={EuropaIcon} alt="Europa" />
+      </div>
+      <div className="textDiv">
+        <h2>EUROPA</h2>
+        <p>
+          The smallest of the four Galilean moons orbiting Jupiter, Europa is a
+          winter lover’s dream. With an icy surface, it’s perfect for a bit of
+          ice skating, curling, hockey, or simple relaxation in your snug
+          wintery cabin.
+        </p>
+        <hr />
 
-      <InfoContainer>
-        <div>
-          <h3>AVG. DISTANCE</h3>
-          <h4>628 MIL. km</h4>
-        </div>
-        <div>
-          <h5>Est. travel time</h5>
-          <h6>3 years</h6>
-        </div>
-      </InfoContainer>
+        <InfoContainer>
+          <div>
+            <h3>AVG. DISTANCE</h3>
+            <h4>628 MIL. km</h4>
+          </div>
+          <div>
+            <h5>Est. travel time</h5>
+            <h6>3 years</h6>
+          </div>
+        </InfoContainer>
+      </div>
     </Container>
   );
 }
@@ -51,10 +55,6 @@ const Container = styled.div`
   width: 100%;
   padding: 24px 0;
   position: relative;
-
-  @media (min-width: 768px) {
-    padding: 40px 0 70px 0;
-  }
 
   h1 {
     width: 100%;
@@ -81,8 +81,46 @@ const Container = styled.div`
       color: #ffffff;
       opacity: 0.25;
     }
+  }
 
-    @media (min-width: 768px) {
+  h2 {
+    font-family: "Bellefair";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 64px;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  p {
+    font-family: "Barlow";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px;
+    text-align: center;
+    color: #d0d6f9;
+  }
+
+  img {
+    width: 170px;
+    height: 170px;
+    margin: 32px 0 74px 0;
+  }
+
+  hr {
+    width: 100%;
+    border: none;
+    height: 1px;
+    background: #383b4b;
+    margin: 32px 0;
+  }
+
+  @media (min-width: 768px) {
+    padding: 40px 0 70px 0;
+
+    h1 {
       font-size: 20px;
       letter-spacing: 3.375px;
       text-align: left;
@@ -94,61 +132,54 @@ const Container = styled.div`
         line-height: 24px;
       }
     }
-  }
 
-  h2 {
-    font-family: "Bellefair";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 56px;
-    line-height: 64px;
-    text-align: center;
-    color: #ffffff;
+    hr {
+      margin: 49px 0;
+    }
 
-    @media (min-width: 768px) {
+    img {
+      width: 300px;
+      height: 300px;
+      margin: 60px 0 119px 0;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 28px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
       font-size: 80px;
       line-height: 92px;
     }
   }
 
-  p {
-    font-family: "Barlow";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 25px;
-    text-align: center;
-    color: #d0d6f9;
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: end;
 
-    @media (min-width: 768px) {
-      font-size: 16px;
-      line-height: 28px;
-      margin-bottom: 18px;
+    .textDiv {
+      max-width: 445px;
     }
-  }
 
-  img {
-    width: 170px;
-    height: 170px;
-    margin: 32px 0 74px 0;
-
-    @media (min-width: 768px) {
-      width: 300px;
-      height: 300px;
-
-      margin: 60px 0 119px 0;
+    img {
+      width: 445px;
+      height: 445px;
+      margin: 97px 0 0 0;
     }
-  }
 
-  hr {
-    width: 100%;
-    border: none;
-    height: 1px;
-    background: #383b4b;
-    margin: 32px 0;
+    p {
+      font-size: 18px;
+      line-height: 32px;
+      text-align: left;
+    }
 
-    @media (min-width: 768px) {
-      margin: 49px 0;
+    h2 {
+      font-size: 100px;
+      line-height: 115px;
+      text-align: left;
     }
   }
 `;
@@ -213,6 +244,14 @@ const InfoContainer = styled.div`
 
     h4 {
       margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
     }
   }
 `;

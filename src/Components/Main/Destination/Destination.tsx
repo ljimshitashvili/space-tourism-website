@@ -63,6 +63,10 @@ const Container = styled.div`
   @media (min-width: 768px) {
     max-width: 573px;
   }
+
+  @media (min-width: 1024px) {
+    max-width: unset;
+  }
 `;
 
 const ButtonContainer = styled.div`
@@ -96,6 +100,11 @@ const ButtonContainer = styled.div`
       letter-spacing: 2.7;
     }
   }
+
+  @media (min-width: 1024px) {
+    top: 130px;
+    right: 20%;
+  }
 `;
 
 const Slider = styled.div<SliderTypes>`
@@ -108,13 +117,13 @@ const Slider = styled.div<SliderTypes>`
 
   ${(p) =>
     p.destPath.includes("moon")
-      ? `transform: translateX(-20px)`
+      ? `transform: translateX(0px)`
       : p.destPath.includes("/mars")
-      ? `transform: translateX(75px)`
+      ? `transform: translateX(60px)`
       : p.destPath.includes("europa")
-      ? `transform: translateX(175px)`
+      ? `transform: translateX(127px)`
       : p.destPath.includes("titan")
-      ? `transform: translateX(275px)`
+      ? `transform: translateX(200px)`
       : ``};
 
   @media (min-width: 768px) {
