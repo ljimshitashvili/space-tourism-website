@@ -29,7 +29,7 @@ export default function Header({ path }: Props) {
         <Link to="destination/moon">
           <span>01 </span> DESTINATION
         </Link>
-        <Link to="crew">
+        <Link to="crew/douglas-hurley">
           <span>02 </span> CREW
         </Link>
         <Link to="technology">

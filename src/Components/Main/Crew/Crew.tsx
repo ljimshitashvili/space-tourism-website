@@ -12,10 +12,16 @@ interface Props {
   setPath: (path: string) => void;
 }
 
+interface ButtonTypes {
+  crewPath: string;
+}
+
 export default function Destination({ setPath }: Props) {
-  const [destPath, setDestPath] = useState<string>("");
+  const [crewPath, setCrewPath] = useState<string>("");
 
   const location = useLocation();
+
+  console.log(crewPath);
 
   useEffect(() => {
     setPath(location.pathname);
@@ -28,33 +34,33 @@ export default function Destination({ setPath }: Props) {
       <Routes>
         <Route
           path="douglas-hurley"
-          element={<Douglas setDestPath={setDestPath} />}
+          element={<Douglas setCrewPath={setCrewPath} />}
         ></Route>
         <Route
           path="mark-shuttleworth"
-          element={<Mark setDestPath={setDestPath} />}
+          element={<Mark setCrewPath={setCrewPath} />}
         ></Route>
         <Route
           path="victor-glover"
-          element={<Victor setDestPath={setDestPath} />}
+          element={<Victor setCrewPath={setCrewPath} />}
         ></Route>
         <Route
           path="anousheh-ansari"
-          element={<Anousheh setDestPath={setDestPath} />}
+          element={<Anousheh setCrewPath={setCrewPath} />}
         ></Route>
       </Routes>
-      <ButtonContainer>
+      <ButtonContainer crewPath={crewPath}>
         <Link to="douglas-hurley">
-          <div className="circle"></div>
+          <div className="circle douglas"></div>
         </Link>
         <Link to="mark-shuttleworth">
-          <div className="circle"></div>
+          <div className="circle mark"></div>
         </Link>
         <Link to="victor-glover">
-          <div className="circle"></div>
+          <div className="circle victor"></div>
         </Link>
         <Link to="anousheh-ansari">
-          <div className="circle"></div>
+          <div className="circle anousheh"></div>
         </Link>
       </ButtonContainer>
     </Container>
@@ -126,7 +132,7 @@ const Container = styled.div`
   }
 `;
 
-const ButtonContainer = styled.div`
+const ButtonContainer = styled.div<ButtonTypes>`
   width: 88px;
   display: flex;
   justify-content: space-between;
@@ -148,10 +154,23 @@ const ButtonContainer = styled.div`
   .circle {
     width: 10px;
     height: 10px;
-    background-color: white;
     border-radius: 50%;
+    background-color: white;
+    opacity: 0.17;
   }
 
+  .douglas {
+    ${(p) => (p.crewPath.includes("douglas") ? `opacity: 1` : `opacity: 0.17`)}
+  }
+  .anousheh {
+    ${(p) => (p.crewPath.includes("anousheh") ? `opacity: 1` : `opacity: 0.17`)}
+  }
+  .mark {
+    ${(p) => (p.crewPath.includes("mark") ? `opacity: 1` : `opacity: 0.17`)}
+  }
+  .victor {
+    ${(p) => (p.crewPath.includes("victor") ? `opacity: 1` : `opacity: 0.17`)}
+  }
   @media (min-width: 768px) {
     width: 88px;
     top: 346px;

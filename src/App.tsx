@@ -43,7 +43,7 @@ function App() {
           ></Route>
           <Route path="/crew/*" element={<Crew setPath={setPath} />}></Route>
           <Route
-            path="/technology"
+            path="/technology/*"
             element={<Technology setPath={setPath} />}
           ></Route>
         </Routes>

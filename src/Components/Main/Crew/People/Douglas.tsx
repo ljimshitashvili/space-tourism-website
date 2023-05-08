@@ -5,13 +5,13 @@ import { styled } from "styled-components";
 import DouglasImg from "../../../../assets/starter-code/assets/crew/image-douglas-hurley.png";
 
 interface Props {
-  setDestPath: (destpath: string) => void;
+  setCrewPath: (destpath: string) => void;
 }
 
-export default function Douglas({ setDestPath }: Props) {
+export default function Douglas({ setCrewPath }: Props) {
   const location = useLocation();
   useEffect(() => {
-    setDestPath(location.pathname);
+    setCrewPath(location.pathname);
   }, [location]);
   return (
     <Container>

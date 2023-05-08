@@ -2,13 +2,13 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 interface Props {
-  setDestPath: (destpath: string) => void;
+  setCrewPath: (destpath: string) => void;
 }
 
-export default function Douglas({ setDestPath }: Props) {
+export default function Douglas({ setCrewPath }: Props) {
   const location = useLocation();
   useEffect(() => {
-    setDestPath(location.pathname);
+    setCrewPath(location.pathname);
   }, [location]);
   return <></>;
 }
