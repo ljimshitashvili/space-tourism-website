@@ -77,6 +77,7 @@ const Container = styled.div`
     line-height: 19px;
     letter-spacing: 2.7px;
     color: #ffffff;
+    position: absolute;
 
     span {
       font-family: "Barlow Condensed";
@@ -93,10 +94,35 @@ const Container = styled.div`
 
   @media (min-width: 768px) {
     max-width: 573px;
+    flex: 1;
+    padding: 90px 0 0;
+
+    h1 {
+      top: 40px;
+      left: 0;
+      font-size: 20px;
+      line-height: 24px;
+
+      span {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
   }
 
   @media (min-width: 1024px) {
     max-width: unset;
+
+    h1 {
+      left: 10%;
+      font-size: 28px;
+      line-height: 34px;
+
+      span {
+        font-size: 28px;
+        line-height: 34px;
+      }
+    }
   }
 `;
 
@@ -127,9 +153,8 @@ const ButtonContainer = styled.div`
   }
 
   @media (min-width: 768px) {
-    width: 285px;
-    height: 34px;
-    top: 480px;
+    width: 88px;
+    top: 346px;
 
     a {
       font-size: 16px;
@@ -139,7 +164,14 @@ const ButtonContainer = styled.div`
   }
 
   @media (min-width: 1024px) {
-    top: 130px;
-    right: 20%;
+    top: unset;
+    bottom: 100px;
+    left: 17%;
+    width: 132px;
+
+    .circle {
+      width: 15px;
+      height: 15px;
+    }
   }
 `;

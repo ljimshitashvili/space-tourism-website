@@ -58,6 +58,39 @@ const Container = styled.div`
       background: #383b4b;
     }
   }
+
+  @media (min-width: 768px) {
+    flex-direction: column-reverse;
+    flex: 1;
+    padding-bottom: 0;
+
+    .Img {
+      img {
+        width: 400px;
+        height: 572px;
+      }
+
+      hr {
+        display: none;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-around;
+    gap: unset;
+    .Img {
+      align-self: end;
+      max-width: 570px;
+
+      img {
+        width: 400px;
+        height: 572px;
+      }
+    }
+  }
 `;
 
 const TextContainer = styled.div`
@@ -98,5 +131,43 @@ const TextContainer = styled.div`
     line-height: 25px;
     text-align: center;
     color: #d0d6f9;
+  }
+
+  @media (min-width: 768px) {
+    .profession {
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    .name {
+      font-size: 40px;
+      line-height: 46px;
+    }
+
+    .description {
+      font-size: 16px;
+      line-height: 28px;
+      max-width: 458px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .profession {
+      font-size: 32px;
+      line-height: 37px;
+      margin-bottom: 15px;
+    }
+
+    .name {
+      font-size: 56px;
+      line-height: 64px;
+      margin-bottom: 27px;
+    }
+
+    .description {
+      font-size: 18px;
+      line-height: 32px;
+      max-width: 444px;
+    }
   }
 `;
