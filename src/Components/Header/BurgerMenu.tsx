@@ -25,7 +25,7 @@ export default function BurgerMenu({ active, setActive }: Props) {
         <Link to="destination/moon">
           01 <span>DESTINATION</span>
         </Link>
-        <Link to="crew">
+        <Link to="crew/douglas-hurley">
           02 <span>CREW</span>
         </Link>
         <Link to="technology">
