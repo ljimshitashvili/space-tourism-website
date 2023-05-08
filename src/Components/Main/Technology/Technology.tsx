@@ -20,6 +20,8 @@ export default function Destination({ setpath }: Props) {
 
   const location = useLocation();
 
+  console.log(techpath);
+
   useEffect(() => {
     setpath(location.pathname);
   }, [location]);
@@ -154,22 +156,33 @@ const ButtonContainer = styled.div<ButtonTypes>`
     line-height: 18px;
     text-align: center;
     letter-spacing: 1px;
-    color: #ffffff;
+
     border: 1px solid #ffffff;
   }
 
   .vehicle {
-    ${(p) => (p.techpath.includes("vehicle") ? `background-color: white` : ``)};
-    ${(p) => (p.techpath.includes("vehicle") ? `color: black` : ``)}
+    ${(p) =>
+      p.techpath.includes("vehicle")
+        ? `background-color: white`
+        : `background-color: none`};
+    ${(p) =>
+      p.techpath.includes("vehicle") ? `color: black` : `color: #ffffff`}
   }
   .spaceport {
     ${(p) =>
-      p.techpath.includes("spaceport") ? `background-color: white` : ``};
-    ${(p) => (p.techpath.includes("spaceport") ? `color: black` : ``)}
+      p.techpath.includes("spaceport")
+        ? `background-color: white`
+        : `background-color: none`};
+    ${(p) =>
+      p.techpath.includes("spaceport") ? `color: black` : `color: #ffffff`}
   }
   .capsule {
-    ${(p) => (p.techpath.includes("capsule") ? `background-color: white` : ``)};
-    ${(p) => (p.techpath.includes("capsule") ? `color: black` : ``)}
+    ${(p) =>
+      p.techpath.includes("capsule")
+        ? `background-color: white`
+        : `background-color: none`};
+    ${(p) =>
+      p.techpath.includes("capsule") ? `color: black` : `color: #ffffff`}
   }
   @media (min-width: 768px) {
     width: 212px;
