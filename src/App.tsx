@@ -43,7 +43,7 @@ function App() {
           ></Route>
           <Route path="/crew" element={<Crew setPath={setPath} />}></Route>
           <Route
-            path="/techonolgy"
+            path="/technology"
             element={<Technology setPath={setPath} />}
           ></Route>
         </Routes>
@@ -67,31 +67,37 @@ const Container = styled.div<ContainerTypes>`
   ${(p) =>
     p.path === "/"
       ? `background-image: url(${bgHomeMob})`
-      : p.path === "/destination"
+      : p.path.includes("/destination")
       ? `background-image: url(${bgDestMob})`
-      : p.path === "/crew"
+      : p.path.includes("/crew")
       ? `background-image: url(${bgCrewMob})`
-      : `background-image: url(${bgTechMob})`};
+      : p.path.includes("/technology")
+      ? `background-image: url(${bgTechMob})`
+      : ``};
 
   @media (min-width: 768px) {
     ${(p) =>
       p.path === "/"
         ? `background-image: url(${bgHomeTab})`
-        : p.path === "/destination"
+        : p.path.includes("/destination")
         ? `background-image: url(${bgDestTab})`
-        : p.path === "/crew"
+        : p.path.includes("/crew")
         ? `background-image: url(${bgCrewTab})`
-        : `background-image: url(${bgTechTab})`}
+        : p.path.includes("/technology")
+        ? `background-image: url(${bgCrewTab})`
+        : ``}
   }
 
   @media (min-width: 1024px) {
     ${(p) =>
-      p.path === "/"
+      p.path == "/"
         ? `background-image: url(${bgHomeDesk})`
-        : p.path === "/destination"
+        : p.path.includes("/destination")
         ? `background-image: url(${bgDestDesk})`
-        : p.path === "/crew"
+        : p.path.includes("/crew")
         ? `background-image: url(${bgCrewDesk})`
-        : `background-image: url(${bgTechDesk})`};
+        : p.path.includes("/technology")
+        ? `background-image: url(${bgTechDesk})`
+        : ``};
   }
 `;

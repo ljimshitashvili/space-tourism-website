@@ -26,13 +26,13 @@ export default function Header({ path }: Props) {
           <Slider path={path} />
         </div>
 
-        <Link to="destination">
+        <Link to="destination/moon">
           <span>01 </span> DESTINATION
         </Link>
         <Link to="crew">
           <span>02 </span> CREW
         </Link>
-        <Link to="techonolgy">
+        <Link to="technology">
           <span>03 </span> TECHNOLOGIES
         </Link>
         <hr />

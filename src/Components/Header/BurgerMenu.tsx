@@ -22,13 +22,13 @@ export default function BurgerMenu({ active, setActive }: Props) {
         <Link to="/">
           00 <span>HOME</span>
         </Link>
-        <Link to="destination">
+        <Link to="destination/moon">
           01 <span>DESTINATION</span>
         </Link>
         <Link to="crew">
           02 <span>CREW</span>
         </Link>
-        <Link to="techonolgy">
+        <Link to="technology">
           03 <span>TECHNOLOGIES</span>
         </Link>
       </ButtonContainer>
