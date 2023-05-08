@@ -12,6 +12,7 @@ export default function Destination({ setPath }: Props) {
   useEffect(() => {
     setPath(location.pathname);
   }, [location]);
+
   return (
     <Container>
       <div>

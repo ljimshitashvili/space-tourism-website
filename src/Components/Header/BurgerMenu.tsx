@@ -48,6 +48,7 @@ const Container = styled.div<Props>`
   backdrop-filter: blur(40.7742px);
   padding: 32px;
   transition: all 0.2s;
+  z-index: 10;
 
   img {
     position: absolute;

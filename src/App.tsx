@@ -30,8 +30,6 @@ interface ContainerTypes {
 function App() {
   const [path, setPath] = useState<string>("");
 
-  console.log(path);
-
   return (
     <Container path={path} setPath={setPath}>
       <Router>
@@ -40,7 +38,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home setPath={setPath} />}></Route>
           <Route
-            path="/destination"
+            path="/destination/*"
             element={<Destination setPath={setPath} />}
           ></Route>
           <Route path="/crew" element={<Crew setPath={setPath} />}></Route>
