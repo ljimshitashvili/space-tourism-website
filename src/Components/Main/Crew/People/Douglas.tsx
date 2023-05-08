@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { styled } from "styled-components";
 
-import DouglasImg from "../../../../assets/starter-code/assets/crew/image-douglas-hurley.png";
+import Image from "../../../../assets/starter-code/assets/crew/image-douglas-hurley.png";
 
 interface Props {
   setCrewPath: (destpath: string) => void;
@@ -16,7 +16,7 @@ export default function Douglas({ setCrewPath }: Props) {
   return (
     <Container>
       <div className="Img">
-        <img src={DouglasImg} alt="Douglas Hurley Photo" />
+        <img src={Image} alt="Douglas Hurley Photo" />
         <hr />
       </div>
       <TextContainer>
@@ -38,7 +38,7 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   padding: 32px 0 50px 0;
-  gap: 74px;
+  gap: 90px;
 
   .Img {
     display: flex;
@@ -47,7 +47,7 @@ const Container = styled.div`
     gap: 0;
     width: 100%;
     img {
-      width: 177px;
+      width: 157px;
       height: 222px;
     }
 
@@ -109,6 +109,7 @@ const TextContainer = styled.div`
     mix-blend-mode: normal;
     opacity: 0.5;
     margin-bottom: 8px;
+    text-transform: uppercase;
   }
 
   .name {
